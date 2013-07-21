@@ -1,6 +1,7 @@
 Techinterview::Application.routes.draw do
-  resources :questions
-  resources :responses
+  resources :questions do
+    resources :responses
+  end
   root to: 'admin_pages#home'
 
   match '/about' => 'admin_pages#about'
