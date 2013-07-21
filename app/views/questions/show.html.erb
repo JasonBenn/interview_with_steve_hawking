@@ -1,3 +1,16 @@
-<p><%= @question.question %></p>
 
-<p><%= @question.answer %></p>
+<div class='interview-question'> 
+  <div hidden id="question-id"><%= @question.id %></div>
+  <h1>Interview with Steven Hawking</h1>
+  <div class="hero-unit">
+    <p><%= @question.question %></p>
+    <button class="reveal btn btn-success btn-large">Show Answer</button>
+  </div>
+
+  <hr>
+
+  <div class="hero-unit answer" hidden>
+    <p><%= @question.answer %></p>
+    <button class="next-question btn btn-primary btn-large">Next Question</button>
+  </div>
+</div>
