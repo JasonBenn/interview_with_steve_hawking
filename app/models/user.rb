@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
-  # attr_accessible :title, :body
+  # attr_accessible :name, :screen_id
+
+  has_many :responses
   
   def self.create_with_omniauth(auth)
     create! do |user|
