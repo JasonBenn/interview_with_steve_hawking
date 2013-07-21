@@ -1,0 +1,19 @@
+<% if current_user %>
+  <h1>Welcome to your interview, <%= @user.name %></h1>
+  <p>I want XXXX questions at random <a href="#" class="btn btn-warning">Go!</a></p>
+  <p>Or choose from below:</p>
+  <ul>
+    <% @questions.each do |question| %>
+      <li><%= question.question %></li>
+    <% end %>
+  </ul>
+
+
+<% else %>
+  <h1 class="text-center">Practice Technical Job Interviews<br>with Stephen Hawking</h1>
+  <p></p>
+
+  <div class="text-center">
+    <a href="auth/twitter/" class="btn btn-success btn-large">Start Now</a>
+  </div>
+<% end %>
