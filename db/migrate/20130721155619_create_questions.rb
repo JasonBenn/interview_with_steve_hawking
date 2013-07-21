@@ -3,7 +3,7 @@ class CreateQuestions < ActiveRecord::Migration
     create_table :questions do |t|
       t.text :question
       t.text :answer
-
+      t.integer :subcategory_id
       t.timestamps
     end
   end
