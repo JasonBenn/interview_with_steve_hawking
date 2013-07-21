@@ -1,9 +1,12 @@
 
-<div class='interview-question'> 
+<div class='interview-question'>
   <div hidden id="question-id"><%= @question.id %></div>
   <h1><%= @question.title %></h1>
   <div class="hero-unit">
     <p><%= @question.question %></p>
+    <audio autoplay="autoplay" controls="controls">
+       <source src="<%=@question.audio_path%>" />
+    </audio>
     <button class="reveal btn btn-success">Show Answer</button>
   </div>
 
