@@ -12,7 +12,12 @@
   </tr>
   <% @questions.each do |question| %>
   <tr>
-    <td><i class="icon-check"></i></td>
+    <td>
+      <% if @user.responses.find_by_id(question.id) %>
+        <i class="icon-check"></i>
+      <% else %>
+        <i class="icon-check-empty"></i>
+      <% end %>
     <td><%= link_to question.title, question_path(question) %></td>
   </tr>
   <% end %>
