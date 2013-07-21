@@ -1,8 +1,7 @@
 class QuestionsController < ApplicationController
   def show
+    @user = current_user
     if id = params[:id]
-      puts "**************"
-      puts params
       @question = Question.find(id)
       render :show, layout: false
     else
