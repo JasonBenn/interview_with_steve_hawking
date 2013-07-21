@@ -1,0 +1,8 @@
+<h1>Welcome to your interview, <%= @user.name %></h1>
+<p>I want XXXX questions at random <a href="#" class="btn btn-warning">Go!</a></p>
+<p>Or choose from below:</p>
+<ul>
+  <% @questions.each do |question| %>
+    <li><%= question.question %></li>
+  <% end %>
+</ul>
