@@ -1,7 +1,7 @@
 
 <div class='interview-question'> 
   <div hidden id="question-id"><%= @question.id %></div>
-  <h1>Interview with Steven Hawking</h1>
+  <h1><%= @question.title %></h1>
   <div class="hero-unit">
     <p><%= @question.question %></p>
     <button class="reveal btn btn-success">Show Answer</button>
@@ -10,7 +10,7 @@
   <hr>
 
   <div class="hero-unit answer" hidden>
-    <p><%= @question.answer %></p>
+    <p><%= @question.answer.html_safe %></p>
     <button class="next-question btn btn-primary">Next Question</button>
   </div>
 </div>
