@@ -5,9 +5,11 @@
   <div class="hero-unit">
     <p><%= @question.question %></p>
 
+  <div>
     <audio autoplay="autoplay" controls="controls">
        <source src="<%=@question.audio_path%>" />
     </audio>
+  </div>
 
     <button class="reveal btn btn-success">Show Answer</button>
   </div>
