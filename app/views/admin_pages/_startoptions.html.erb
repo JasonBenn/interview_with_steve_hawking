@@ -1,8 +1,22 @@
-<h1>Welcome to your interview, <%= @user.name %></h1>
-<p>I want XXXX questions at random <a href="#" class="btn btn-warning">Go!</a></p>
-<p>Or choose from below:</p>
-<ul>
+<h1>Welcome, <%= @user.name %></h1>
+<p>Stephen Hawking will ask you a question. Record your response and then review the solution.</p>
+<div class="text-center">
+  <%= link_to "Random Question", question_path(@questions.sample), class: "btn btn-danger btn-large" %>
+</div>
+
+<p>Or choose a specific question:</p>
+<table class="table table-striped table-bordered">
+  <tr>
+    <th>Attempted</th>
+    <th>Title</th>
+  </tr>
   <% @questions.each do |question| %>
-    <li><%= question.question %></li>
+  <tr>
+    <td><i class="icon-check"></i></td>
+    <td><%= link_to question.title, question_path(question) %></td>
+  </tr>
   <% end %>
-</ul>
+
+
+</table>
+

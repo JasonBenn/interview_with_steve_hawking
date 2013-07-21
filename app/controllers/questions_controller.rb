@@ -1,11 +1,11 @@
 class QuestionsController < ApplicationController
   def show
     @user = current_user
-    if id = params[:id]
-      @question = Question.find(id)
+    @question = Question.find(params[:id])
+    if request.xhr?
       render :show, layout: false
     else
-      @question = Question.first
+      render :show
     end
   end
 end
