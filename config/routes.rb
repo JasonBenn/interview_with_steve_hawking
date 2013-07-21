@@ -1,6 +1,9 @@
 Techinterview::Application.routes.draw do
   resources :questions
-  root to: 'questions#show'
+  root to: 'admin_pages#home'
+
+
+  match '/about' => 'admin_pages#about'
 
   # Omniauth Routes
   match "/auth/:provider/callback" => "sessions#create"
