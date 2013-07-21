@@ -1,0 +1,5 @@
+<% if current_user %>
+  <%= render partial: 'startoptions' %>
+<% else %>
+  <%= render partial: 'landing' %>
+<% end %>
