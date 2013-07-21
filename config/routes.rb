@@ -1,5 +1,6 @@
 Techinterview::Application.routes.draw do
   resources :questions
+  resources :responses
   root to: 'questions#show'
 
   # Omniauth Routes
