@@ -2,13 +2,21 @@
 <html>
 <head>
   <title>Techinterview</title>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="preview" id="top" data-spy="scroll" data-target=".subnav" data-offset="80" cz-shortcut-listen="true" style="margin-top: 0px;">
 
-<%= yield %>
+<%= render 'shared/nav' %>
 
+<div class="container">
+  <%= yield %>
+
+  <footer>
+    <p>© Company 2013</p>
+  </footer>
+</div>   
 </body>
 </html>
