@@ -3,13 +3,17 @@
   <div hidden id="question-id"><%= @question.id %></div>
   <h1><%= @question.title %></h1>
   <div class="hero-unit">
-    <p><%= @question.question %></p>
+    <div id='steve'>
+      <%= image_tag 'stephen_hawking_one.gif', id: 'one' %>
+      <%= image_tag 'stephen_hawking_two.gif', id: 'two' %>
+    </div>
+    <p class='question'><%= @question.question %></p>
 
-  <div>
-    <audio autoplay="autoplay" controls="controls">
-       <source src="<%=@question.audio_path%>" />
-    </audio>
-  </div>
+    <div hidden>
+      <audio autoplay="autoplay" controls="controls">
+         <source src="<%=@question.audio_path%>" />
+      </audio>
+    </div>
 
     <button class="reveal btn btn-success">Show Answer</button>
   </div>
