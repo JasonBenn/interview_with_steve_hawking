@@ -9,10 +9,6 @@ Contributors:
 - [Earl Wagner](https://github.com/innovateworld)
 
 
-##About
-
-This web app was built in eight hours during the inaugural DevBootcamp Chicago intra-cohort Hackathon.
-
 
 ##Development
 
