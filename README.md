@@ -1,4 +1,9 @@
 #Technical Interview with Stephen Hawking
+
+Need a little interview practice?  Brush up on your data structures and algorithms with our eerily lifelike Stephen Hawking simulator!
+
+Site built in Rails.  Questions scraped using Nokogiri, authentication implemented using the Twitter strategy for Omniauth, and text-to-speech generated using free online software.
+
 <http://interview-with-stephen.herokuapp.com/>
 
 
