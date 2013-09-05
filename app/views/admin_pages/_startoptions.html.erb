@@ -6,22 +6,27 @@
 
 <p>Or choose a specific question:</p>
 <table class="table table-striped table-bordered">
-  <tr>
-    <th>Attempted</th>
-    <th>Title</th>
-  </tr>
-  <% @questions.each do |question| %>
-  <tr>
-    <td>
-      <% if @user.responses.find_by_id(question.id) %>
-        <i class="icon-check"></i>
-      <% else %>
-        <i class="icon-check-empty"></i>
-      <% end %>
-    <td><%= link_to question.title, question_path(question) %></td>
-  </tr>
-  <% end %>
-
-
+  <thead>
+    <tr>
+      <th>Attempted</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @questions.each do |question| %>
+    <tr>
+      <td>
+        <% if response = @user.responses.find_by_question_id(question.id) %>
+          <%= link_to question_response_path(question, response), method: :delete do %>
+            <i class="icon-check"></i>
+          <% end %>
+        <% else %>
+          <%= link_to question_responses_path(question), method: :post do %>
+            <i class="icon-check-empty"></i>
+          <% end %>
+        <% end %>
+      <td><%= link_to question.title, question_path(question) %></td>
+    </tr>
+    <% end %>
+  </tbody>
 </table>
-

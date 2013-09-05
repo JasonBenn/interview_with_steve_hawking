@@ -11,5 +11,15 @@ class ResponsesController < ApplicationController
     # response.update_attributes :times_seen => (response.times_seen + 1)
   end
 
-  
+  def create
+    Question.find_by_id(params[:question_id]).responses.create(
+      user_id: current_user.id,
+      times_seen: 1)
+    redirect_to :root
+  end
+
+  def destroy
+    Question.find_by_id(params[:question_id]).responses.find_by_id(params[:id]).destroy
+    redirect_to :root
+  end
 end
